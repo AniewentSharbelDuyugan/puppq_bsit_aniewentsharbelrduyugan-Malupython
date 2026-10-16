@@ -12,3 +12,15 @@ CREATE TABLE IF NOT EXISTS data (
     username VARCHAR(100),
     password VARCHAR(20)
 );
+
+CREATE TABLE students(
+  student_id INT primary key,
+  full_name varchar(50) not null,
+  program varchar(50) not null
+
+);
+
+alter table students
+add column email varchar(50);
+
+describe students;
