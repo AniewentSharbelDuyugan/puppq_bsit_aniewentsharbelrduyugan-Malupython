@@ -27,3 +27,8 @@ describe students;
 
 alter table students
 rename column full_name to student_name;
+
+insert into students
+      (student_id, student_name, program, email)
+VALUES
+      (1001, 'Berry', 'BSIT', 'beryberybery@gmail.com');
