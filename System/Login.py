@@ -11,7 +11,7 @@ def forget_pass():
         elif new_entry.get()!= confirm_entry.get():
             messagebox.showerror('Error', 'Password and Confirm Password Mismatch', parent=window)
         else:
-            con=pymysql.connect(host='localhost', user='root', password='1234', database='userdata2')
+            con=pymysql.connect(host='localhost', user='root', password='1234', database='university_db')
             mycursor = con.cursor()
             query = 'select * from data where username=%s'
             mycursor.execute(query, (user_entry.get()))
@@ -75,7 +75,7 @@ def login_user():
         except:
             messagebox.showerror('Error', 'Connection is not established try again')
             return
-        query='use userdata2'
+        query='use university_db'
         mycursor.execute(query)
         query='select * from data where username=%s and password=%s'
         mycursor.execute(query, (usernameEntry.get(), passwordEntry.get()))

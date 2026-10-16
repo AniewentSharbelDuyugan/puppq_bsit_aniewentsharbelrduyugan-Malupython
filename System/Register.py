@@ -18,7 +18,7 @@ def connect_database():
          messagebox.showerror('Error', 'Password Mismatch')
     else:
         try:
-            con=pymysql.connect(host='localhost', user='root', password='1234', database='userdata2')
+            con=pymysql.connect(host='localhost', user='root', password='1234', database='university_db')
             mycursor=con.cursor()
         except:
             messagebox.showerror('Error', 'Database Connectivity Issue, Please Try Again')
