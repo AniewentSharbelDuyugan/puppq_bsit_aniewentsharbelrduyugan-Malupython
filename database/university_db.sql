@@ -24,3 +24,6 @@ alter table students
 add column email varchar(50);
 
 describe students;
+
+alter table students
+rename column full_name to student_name;
