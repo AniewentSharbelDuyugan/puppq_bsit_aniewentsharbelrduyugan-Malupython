@@ -18,20 +18,11 @@ def connect_database():
          messagebox.showerror('Error', 'Password Mismatch')
     else:
         try:
-            con=pymysql.connect(host='localhost', user='root', password='1234')
+            con=pymysql.connect(host='localhost', user='root', password='1234', database='userdata2')
             mycursor=con.cursor()
         except:
             messagebox.showerror('Error', 'Database Connectivity Issue, Please Try Again')
             return
-        try:
-            query='create database userdata2'
-            mycursor.execute(query)
-            query='use userdata2'
-            mycursor.execute(query)
-            query='create table data(id int auto_increment primary key not null, email varchar(50), username varchar(100), password varchar(20))'
-            mycursor.execute(query)
-        except:
-            mycursor.execute('use userdata2')
         query='select * from data where username=%s'
         mycursor.execute(query,(usernameEntry.get()))
 
